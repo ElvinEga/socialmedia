@@ -4,7 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 
-	"socialmedia/internal/database"
+	"github.com/ElvinEga/socialmedia/internal/database"
 )
 
 func CreatePost(c *fiber.Ctx) error {

@@ -5,7 +5,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 
-	"socialmedia/internal/database"
+	"github.com/ElvinEga/socialmedia/internal/database"
 )
 
 func UpdateProfile(c *fiber.Ctx) error {
