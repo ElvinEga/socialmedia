@@ -1,20 +1,23 @@
+package mail
+
+import (
+	"gopkg.in/gomail.v2"
+)
+
 func SendVerificationEmail(email, token string) error {
-	// SMTP configuration from internal/config/config.go
+	// SMTP configuration
 	cfg := config.GetConfig()
+	m := gomail.NewMessage()
+	m.SetHeader("From", cfg.SMTPUser)
+	m.SetHeader("To", email)
+	m.SetHeader("Subject", "Verify Your Email")
+	m.SetBody("text/html", "Verify your email: http://localhost:8000/verify-email/"+token)
 
-	msg := &email.Message{
-		Headers: email.Headers{
-			"From":    "noreply@example.com",
-			"To":      email.Address(email, ""),
-			"Subject": "Verify Your Email",
-		},
-		Body: fmt.Sprintf("Verify your email: http://localhost:8000/verify-email/%s", token),
-	}
-
-	return email.NewSMTPClient(
+	// Send email
+	return gomail.NewDialer(
 		cfg.SMTPHost,
 		cfg.SMTPPort,
 		cfg.SMTPUser,
 		cfg.SMTPPassword,
-	).Send(msg)
+	).DialAndSend(m)
 }
