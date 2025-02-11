@@ -1,0 +1,7 @@
+app.Get("/verify-email/:token", handlers.VerifyEmail)
+app.Get("/auth/google", handlers.GoogleLogin)
+app.Get("/auth/google/callback", handlers.GoogleCallback)
+app.Get("/auth/github", handlers.GitHubLogin)
+app.Get("/auth/github/callback", handlers.GitHubCallback)
+app.Post("/auth/logout", handlers.Logout)
+app.Put("/users/password", handlers.ChangePassword)
