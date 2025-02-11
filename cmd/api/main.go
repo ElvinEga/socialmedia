@@ -11,8 +11,8 @@ import (
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 
-	"socialmedia/internal/database"
-	"socialmedia/server"
+	"github.com/ElvinEga/socialmedia/internal/database"
+	"github.com/ElvinEga/socialmedia/server"
 )
 
 func main() {

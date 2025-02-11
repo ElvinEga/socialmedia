@@ -12,8 +12,8 @@ import (
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 
-	"socialmedia/internal/database"
-	"socialmedia/internal/mail"
+	"github.com/ElvinEga/socialmedia/internal/database"
+	"github.com/ElvinEga/socialmedia/internal/mail"
 )
 
 func Register(c *fiber.Ctx) error {

@@ -1,7 +1,8 @@
 package server
 
 import (
-	"socialmedia/server/handlers"
+	"github.com/ElvinEga/socialmedia/server/handlers"
+	"gorm.io/gorm"
 
 	"github.com/gofiber/fiber/v2"
 )
