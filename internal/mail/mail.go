@@ -1,6 +1,7 @@
 package mail
 
 import (
+	"github.com/ElvinEga/socialmedia/internal/config"
 	"gopkg.in/gomail.v2"
 )
 
